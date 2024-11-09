@@ -4,8 +4,8 @@ import styles from "./styles.module.css";
 export default function Logo() {
   return (
     <div>
-      <span>Coin</span>
-      <span className={styles.logoColor}>Wise.</span>
+      <span className={styles.logoColor}>Coin</span>
+      <span>Wise.</span>
     </div>
   );
 }
