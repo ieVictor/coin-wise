@@ -35,7 +35,7 @@ a:not([class]) {
   --color-warning: #f0e100;
   --color-danger: #dc3545;
   --font-primary: "Oswald", sans-serif;
-  --font-secondary: "Source Code Pro", sans-serif;
+  --font-secondary: "Source Sans 3", sans-serif;
 }
 
 /* FONT */
@@ -63,5 +63,11 @@ h6 {
 
 p,
 span {
-  font-family: "Source Code Pro", sans-serif;
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
