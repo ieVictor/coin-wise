@@ -22,7 +22,6 @@ export default function HeroSection() {
         <figure>
           <img src="/src\assets\Crypto.png" alt="Crypto" />
         </figure>
-        <aside></aside>
       </main>
     </div>
   );

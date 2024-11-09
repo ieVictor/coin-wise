@@ -1,0 +1,29 @@
+.coinWrapper {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.imgWrapper {
+  img {
+    height: 56px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+.coinName {
+  font-weight: 700;
+  margin-left: 16px;
+  p {
+    font-size: 24px;
+    line-height: 24px;
+    span {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 14px;
+      color: var(--color-secondary);
+    }
+  }
+}
+
+.coinRank {
+}
