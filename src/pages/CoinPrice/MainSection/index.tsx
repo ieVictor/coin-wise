@@ -20,9 +20,13 @@ export default function MainSection() {
             </Link>
           </Breadcrumbs>
         </div>
-        <div>
-          <Coin />
-        </div>
+        <Coin
+          name="Bitcoin"
+          percentage={0.8}
+          price={76448.79}
+          rank={1}
+          symbol="BTC"
+        />
       </main>
     </div>
   );

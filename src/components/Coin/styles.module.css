@@ -1,5 +1,12 @@
+.coin {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
 .coinWrapper {
   display: flex;
+  width: 256px;
+  justify-content: center;
   align-items: center;
   cursor: pointer;
 }
@@ -26,4 +33,33 @@
 }
 
 .coinRank {
+  margin-left: 16px;
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+  padding: 0 4px;
+}
+
+.coinPriceWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    font-size: 32px;
+    font-weight: 700;
+    font-family: var(--font-secondary);
+  }
+  span {
+    font-size: 14px;
+  }
+  .coinPricePercentageWrapper {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    span {
+      display: flex;
+      font-size: 14px;
+      margin-left: 8px;
+      gap: 8px;
+    }
+  }
 }
