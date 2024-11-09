@@ -19,15 +19,10 @@ export default function HeroSection() {
             exlore some coins
           </Button>
         </main>
-        <aside>
-          <figure>
-            <img
-              src="/src\assets\Crypto.png"
-              alt="Crypto"
-              style={{ height: "50px" }}
-            />
-          </figure>
-        </aside>
+        <figure>
+          <img src="/src\assets\Crypto.png" alt="Crypto" />
+        </figure>
+        <aside></aside>
       </main>
     </div>
   );
