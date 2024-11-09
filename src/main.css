@@ -34,6 +34,8 @@ a:not([class]) {
   --color-success: #28a745;
   --color-warning: #f0e100;
   --color-danger: #dc3545;
+  --font-primary: "Oswald", sans-serif;
+  --font-secondary: "Source Code Pro", sans-serif;
 }
 
 /* FONT */
