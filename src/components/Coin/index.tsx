@@ -39,7 +39,12 @@ export default function Coin({
         </div>
       </div>
       <div className={styles.coinPriceWrapper}>
-        <p>${price.toFixed(2)}</p>
+        <p>
+          {price.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          })}
+        </p>
         <div className={styles.coinPricePercentageWrapper}>
           <span style={{ color: percentage > 0 ? "green" : "red" }}>
             {percentage > 0 ? <TrendUp size={18} /> : <TrendDown size={18} />}
