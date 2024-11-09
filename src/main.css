@@ -38,14 +38,14 @@ a:not([class]) {
 
 /* FONT */
 h1 {
-  font-family: "Oswld", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 6rem;
   line-height: 6.625rem;
 }
 
 h2 {
-  font-family: "Oswld", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
   font-size: 3.5rem;
   line-height: 3.75rem;
@@ -55,7 +55,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Oswld", sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 700;
 }
 
