@@ -37,7 +37,11 @@ a:not([class]) {
   --font-primary: "Oswald", sans-serif;
   --font-secondary: "Source Sans 3", sans-serif;
 }
-
+/* styles.module.css */
+nav ul li .active {
+  color: var(--color-primary);
+  font-weight: bold;
+}
 /* FONT */
 h1 {
   font-family: "Oswald", sans-serif;
