@@ -1,11 +1,11 @@
-import { Button } from "@mui/material";
-import styles from "./styles.module.css";
-import { CaretRight } from "@phosphor-icons/react";
+import { Button } from '@mui/material';
+import styles from './styles.module.css';
+import { CaretRight } from '@phosphor-icons/react';
 export default function HeroSection() {
   return (
-    <div className="container">
+    <section>
       <main className={styles.heroWrapper}>
-        <main>
+        <div>
           <h1>The Foremost Cryptocurrency Platform</h1>
           <p>
             Explore a comprehensive suite of over 100 peretual and quaterly
@@ -18,12 +18,11 @@ export default function HeroSection() {
           >
             exlore some coins
           </Button>
-        </main>
+        </div>
         <figure>
           <img src="/src\assets\Crypto.png" alt="Crypto" />
         </figure>
-        <aside></aside>
       </main>
-    </div>
+    </section>
   );
 }

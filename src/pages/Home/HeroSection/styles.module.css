@@ -1,11 +1,12 @@
 .heroWrapper {
   width: 100%;
   height: 90dvh;
+  padding-left: 64px;
   display: flex;
   align-items: center;
   position: relative;
 
-  main {
+  div {
     width: 50%;
     h1 {
       margin-bottom: 24px;
