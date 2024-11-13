@@ -3,12 +3,12 @@
     font-family: 'Source Sans 3', sans-serif;
     display: flex;
     width: 100%;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
   }
 
   tr:has(td):hover {
     cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.05); 
+    background-color: rgba(0, 0, 0, 0.05);
   }
 
   th {
@@ -36,7 +36,21 @@
     span {
       font-family: 'Source Sans 3', sans-serif;
       font-weight: bold;
-      font-size: 14;
+      font-size: 14px;
     }
+  }
+}
+
+.paginationWrapper {
+  width: 100%;
+  max-width: 974px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    color: #7d7d7d;
   }
 }

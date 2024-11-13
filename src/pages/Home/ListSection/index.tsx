@@ -6,7 +6,11 @@ export default function ListSection() {
     <section className={styles.sectionWrapper}>
       <hr />
       <h1>Trade, Exchange, Stake and More with All popular Coins</h1>
+
+      {/* Coins list */}
       <Table />
+
+      {/* Floating Currencies */}
       <img
         src="/src\assets\ApeCoin_3D.png"
         alt="ApeCoin"
