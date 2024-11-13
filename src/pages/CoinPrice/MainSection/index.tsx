@@ -38,7 +38,7 @@ export default function MainSection() {
             totalSupply={21000000}
             maxSupply={21000000}
           />
-          <Info />
+          <Info Website={["bitcoin.org", "whitepaper"]} />
         </div>
       </main>
     </div>

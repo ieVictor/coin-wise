@@ -3,7 +3,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4rem;
   width: 100%;
+  gap: 2rem;
   height: 90dvh;
 
   .breadcrumb {
