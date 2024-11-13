@@ -2,6 +2,7 @@ import { Breadcrumbs, Link } from "@mui/material";
 import styles from "./styles.module.css";
 import { CaretRight } from "@phosphor-icons/react";
 import Coin from "@Components/Coin";
+import MarketInfo from "@Components/MarketInfo";
 
 export default function MainSection() {
   return (
@@ -27,6 +28,32 @@ export default function MainSection() {
           rank={1}
           symbol="BTC"
         />
+        <div className={styles.mainContentInfos}>
+          <MarketInfo
+            marketCap={1511334584361}
+            fullyDilutedValuation={1604578311000}
+            tradingVolume={54231301407}
+            circulatingSupply={19779668}
+            totalSupply={21000000}
+            maxSupply={21000000}
+          />
+          <MarketInfo
+            marketCap={1511334584361}
+            fullyDilutedValuation={1604578311000}
+            tradingVolume={54231301407}
+            circulatingSupply={19779668}
+            totalSupply={21000000}
+            maxSupply={21000000}
+          />
+          <MarketInfo
+            marketCap={1511334584361}
+            fullyDilutedValuation={1604578311000}
+            tradingVolume={54231301407}
+            circulatingSupply={19779668}
+            totalSupply={21000000}
+            maxSupply={21000000}
+          />
+        </div>
       </main>
     </div>
   );
