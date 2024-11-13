@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { CaretRight } from "@phosphor-icons/react";
 import Coin from "@Components/Coin";
 import MarketInfo from "@Components/MarketInfo";
+import Info from "@Components/Info";
 
 export default function MainSection() {
   return (
@@ -37,22 +38,7 @@ export default function MainSection() {
             totalSupply={21000000}
             maxSupply={21000000}
           />
-          <MarketInfo
-            marketCap={1511334584361}
-            fullyDilutedValuation={1604578311000}
-            tradingVolume={54231301407}
-            circulatingSupply={19779668}
-            totalSupply={21000000}
-            maxSupply={21000000}
-          />
-          <MarketInfo
-            marketCap={1511334584361}
-            fullyDilutedValuation={1604578311000}
-            tradingVolume={54231301407}
-            circulatingSupply={19779668}
-            totalSupply={21000000}
-            maxSupply={21000000}
-          />
+          <Info />
         </div>
       </main>
     </div>
