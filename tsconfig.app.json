@@ -20,7 +20,7 @@
       "@Components/*": ["src/components/*"],
       "@Pages/*": ["src/pages/*"],
       "@Contexts/*": ["src/contexts/*"],
-      "@Services/*": ["src/services/*"],
+      "@Services/*": ["src/hooks/*"],
       "@Routes/*": ["src/routes/*"],
       "@Types/*": ["src/types/*"],
       "@Hooks/*": ["src/hooks/*"],
