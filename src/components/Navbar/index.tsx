@@ -5,16 +5,16 @@ import { NavLink } from "react-router-dom";
 export default function Navbar() {
   return (
     <div className={styles.navbarWrapper}>
-      <NavLink to="/">
+      <NavLink to="/" end>
         <Logo />
       </NavLink>
       <nav className={styles.asideWrapper}>
         <ul>
           <li>
-            <NavLink to="/">Coins</NavLink>
+            <NavLink to="/coinprice">Coins</NavLink>
           </li>
           <li>
-            <NavLink to="#">Info</NavLink>
+            <NavLink to="/caraio">Info</NavLink>
           </li>
         </ul>
       </nav>
