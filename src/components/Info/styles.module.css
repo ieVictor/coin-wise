@@ -16,9 +16,13 @@
 }
 .infoButtonsWrapper {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  width: 13.75rem;
+  height: 100%;
   gap: 10px;
   button {
+    font-size: 0.75rem;
     padding: 0.25rem;
     border-radius: 4px;
     border: none;

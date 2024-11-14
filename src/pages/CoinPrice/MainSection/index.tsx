@@ -38,7 +38,30 @@ export default function MainSection() {
             totalSupply={21000000}
             maxSupply={21000000}
           />
-          <Info Website={["bitcoin.org", "whitepaper"]} />
+          <Info
+            Website={["bitcoin.org", "whitepaper"]}
+            Explorers={[
+              "Arkham",
+              "Blockchair",
+              "Btc",
+              "TokenView",
+              "Oklink",
+              "3xpl",
+            ]}
+            Wallets={["Trezor", "Electrum", "Xdefi", "SafePal"]}
+            Community={["Twitter", "Facebook", "bitcointalk.org"]}
+            SearchOn={["Twitter"]}
+            SourceCode={["Github"]}
+            ApiId="bitcoin"
+            Chains={["Bitcoin Ecosystem"]}
+            Categories={[
+              "Cryptocurrency",
+              "Layer 1 (L1)",
+              "FTX Holdings",
+              "Proof of Work (PoW)",
+              "GMCI 30 Index",
+            ]}
+          />
         </div>
       </main>
     </div>
