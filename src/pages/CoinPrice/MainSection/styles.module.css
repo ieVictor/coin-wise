@@ -6,14 +6,14 @@
   padding: 4rem;
   width: 100%;
   gap: 2rem;
-  height: 90dvh;
+  height: 100dvh;
 
   .breadcrumb {
     width: 100%;
   }
   .mainContentInfos {
     width: 100%;
-    height: 100%;
+    height: 38.875rem;
     padding: 1rem 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

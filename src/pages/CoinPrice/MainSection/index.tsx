@@ -4,6 +4,7 @@ import { CaretRight } from "@phosphor-icons/react";
 import Coin from "@Components/Coin";
 import MarketInfo from "@Components/MarketInfo";
 import Info from "@Components/Info";
+import CoinConverter from "@Components/CoinConverter";
 
 export default function MainSection() {
   return (
@@ -62,6 +63,9 @@ export default function MainSection() {
               "GMCI 30 Index",
             ]}
           />
+          <div>
+            <CoinConverter usdPrice={76479} coinCode="BTC" />
+          </div>
         </div>
       </main>
     </div>
