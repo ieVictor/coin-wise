@@ -19,4 +19,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
   }
+  .coinConverterWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 2rem;
+  }
 }

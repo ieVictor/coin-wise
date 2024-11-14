@@ -63,8 +63,9 @@ export default function MainSection() {
               "GMCI 30 Index",
             ]}
           />
-          <div>
+          <div className={styles.coinConverterWrapper}>
             <CoinConverter usdPrice={76479} coinCode="BTC" />
+            <hr />
           </div>
         </div>
       </main>
