@@ -5,6 +5,7 @@ import Coin from "@Components/Coin";
 import MarketInfo from "@Components/MarketInfo";
 import Info from "@Components/Info";
 import CoinConverter from "@Components/CoinConverter";
+import CoinHistoricalPrice from "@Components/CoinHistoricalPrice";
 
 export default function MainSection() {
   return (
@@ -66,6 +67,15 @@ export default function MainSection() {
           <div className={styles.coinConverterWrapper}>
             <CoinConverter usdPrice={76479} coinCode="BTC" />
             <hr />
+            <CoinHistoricalPrice
+              coinCode="BTC"
+              allTimeHigh={0}
+              allTimeLow={0}
+              high7d={0}
+              low7d={0}
+              high24h={0}
+              low24h={0}
+            />
           </div>
         </div>
       </main>
