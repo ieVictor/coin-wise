@@ -6,8 +6,13 @@ import MarketInfo from "@Components/MarketInfo";
 import Info from "@Components/Info";
 import CoinConverter from "@Components/CoinConverter";
 import CoinHistoricalPrice from "@Components/CoinHistoricalPrice";
+import { useCryptoById } from "@Services/useCrypto";
+import { useParams } from "react-router-dom";
 
 export default function MainSection() {
+  const { id } = useParams();
+  const data = useCryptoById(id ?? "");
+  console.log(data);
   return (
     <div className="container">
       <main className={styles.mainWrapper}>
