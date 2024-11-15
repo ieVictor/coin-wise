@@ -22,11 +22,19 @@ function Footer() {
               commercial purposes.
             </p>
           </div>
-          <div className={styles.footerContact}>
+          <div id="contact" className={styles.footerContact}>
             <h2>Developed By</h2>
             <ul>
-              <li>Victor Gabriel Lucio</li>
-              <li>Weslley Silva</li>
+              <li>
+                <a href="https://github.com/ieVictor" target="_blank">
+                  Victor Gabriel Lucio
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/weslleysilv4" target="_blank">
+                  Weslley Silva
+                </a>
+              </li>
             </ul>
           </div>
         </div>
