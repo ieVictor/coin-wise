@@ -8,10 +8,11 @@ import CoinConverter from "@Components/CoinConverter";
 import CoinHistoricalPrice from "@Components/CoinHistoricalPrice";
 import { useCryptoById } from "@Services/useCrypto";
 import { useParams } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 export default function MainSection() {
   const { id } = useParams();
   const { data } = useCryptoById(id ?? "");
+  const navigate = useNavigate();
   console.log(data);
   return (
     data && (
@@ -22,7 +23,11 @@ export default function MainSection() {
               separator={<CaretRight size={16} />}
               aria-label="breadcrumb"
             >
-              <Link underline="hover" color="inherit" href="/">
+              <Link
+                underline="hover"
+                color="inherit"
+                onClick={() => navigate("/")}
+              >
                 <strong>Cryptocurrencies</strong>
               </Link>
               <Link underline="hover" color="inherit" href="/">
