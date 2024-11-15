@@ -5,5 +5,10 @@ span {
 }
 
 .logoColor {
-  color: var(--color-primary);
+  color: #000;
+}
+
+.logoLarge span {
+  color: white;
+  font-size: 64px;
 }

@@ -7,7 +7,7 @@ function Router() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/coinprice" element={<CoinPrice />} />
+        <Route path="/coin/:id" element={<CoinPrice />} />
       </Routes>
     </div>
   );

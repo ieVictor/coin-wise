@@ -1,6 +1,6 @@
-import { Button } from '@mui/material';
-import styles from './styles.module.css';
-import { CaretRight } from '@phosphor-icons/react';
+import { Button } from "@mui/material";
+import styles from "./styles.module.css";
+import { CaretRight } from "@phosphor-icons/react";
 export default function HeroSection() {
   return (
     <section>
@@ -11,13 +11,15 @@ export default function HeroSection() {
             Explore a comprehensive suite of over 100 peretual and quaterly
             futures in crypto
           </p>
-          <Button
-            variant="contained"
-            color="primary"
-            endIcon={<CaretRight size={16} />}
-          >
-            exlore some coins
-          </Button>
+          <a href="#tableCoins">
+            <Button
+              variant="contained"
+              color="primary"
+              endIcon={<CaretRight size={16} />}
+            >
+              exlore some coins
+            </Button>
+          </a>
         </div>
         <figure>
           <img src="/src\assets\Crypto.png" alt="Crypto" />

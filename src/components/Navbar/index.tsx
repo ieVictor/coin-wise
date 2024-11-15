@@ -11,10 +11,10 @@ export default function Navbar() {
       <nav className={styles.asideWrapper}>
         <ul>
           <li>
-            <NavLink to="/coinprice">Coins</NavLink>
+            <NavLink to="/">Coins</NavLink>
           </li>
           <li>
-            <NavLink to="/caraio">Info</NavLink>
+            <a href="#contact">Contact Us</a>
           </li>
         </ul>
       </nav>

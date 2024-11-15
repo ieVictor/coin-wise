@@ -43,6 +43,8 @@ export default function Coin({
           {price.toLocaleString("en-US", {
             style: "currency",
             currency: "USD",
+            minimumFractionDigits: 4,
+            maximumFractionDigits: 6,
           })}
         </p>
         <div className={styles.coinPricePercentageWrapper}>

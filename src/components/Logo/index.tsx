@@ -1,9 +1,17 @@
 import styles from "./styles.module.css";
 
-export default function Logo() {
+type LogoProps = {
+  size?: "normal" | "large";
+};
+
+export default function Logo({ size = "normal" }: LogoProps) {
   return (
-    <div>
-      <span className={styles.logoColor}>Coin</span>
+    <div className={size === "large" ? styles.logoLarge : styles.logoColor}>
+      <span
+        style={size !== "large" ? { color: "#1459f1" } : { color: "white" }}
+      >
+        Coin
+      </span>
       <span>Wise.</span>
     </div>
   );

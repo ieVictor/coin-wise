@@ -1,11 +1,11 @@
 import styles from "./styles.module.css";
 type MarketInfoProps = {
   marketCap: number;
-  fullyDilutedValuation: number;
+  fullyDilutedValuation: number | null;
   tradingVolume: number;
   circulatingSupply: number;
   totalSupply: number;
-  maxSupply: number;
+  maxSupply: number | null;
 };
 function MarketInfo(props: MarketInfoProps) {
   return (
