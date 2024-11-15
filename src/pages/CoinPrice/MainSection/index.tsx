@@ -86,8 +86,6 @@ export default function MainSection() {
                 coinCode={data.symbol.toUpperCase()}
                 allTimeHigh={data.market_data.ath.usd}
                 allTimeLow={data.market_data.atl.usd}
-                high7d={0}
-                low7d={0}
                 high24h={data.market_data.high_24h.usd}
                 low24h={data.market_data.low_24h.usd}
               />
