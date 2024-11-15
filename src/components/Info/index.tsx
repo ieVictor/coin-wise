@@ -20,9 +20,9 @@ function Info(props: InfoProps) {
       <div className={styles.infoWrapper}>
         <p>Website</p>
         <div className={styles.infoButtonsWrapper}>
-          {props.Website.map((website, index) => (
-            <button key={index}>{website}</button>
-          ))}
+          {props.Website.map((website, index) =>
+            website.length > 0 ? <button key={index}>{website}</button> : null
+          )}
         </div>
       </div>
 
@@ -47,9 +47,11 @@ function Info(props: InfoProps) {
       <div className={styles.infoWrapper}>
         <p>Community</p>
         <div className={styles.infoButtonsWrapper}>
-          {props.Community.map((community, index) => (
-            <button key={index}>{community}</button>
-          ))}
+          {props.Community.map((community, index) =>
+            community.length > 0 ? (
+              <button key={index}>{community}</button>
+            ) : null
+          )}
         </div>
       </div>
 

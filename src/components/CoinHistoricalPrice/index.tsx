@@ -19,6 +19,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.low24h.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
           <p> - </p>
@@ -26,6 +28,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.high24h.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
         </div>
@@ -37,6 +41,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.low7d.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
           <p> - </p>
@@ -44,6 +50,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.high7d.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
         </div>
@@ -55,6 +63,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.allTimeLow.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
           <p> - </p>
@@ -62,6 +72,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.allTimeLow.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
         </div>
@@ -73,6 +85,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.allTimeLow.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
           <p> - </p>
@@ -80,6 +94,8 @@ function CoinHistoricalPrice(props: CoinHistoricalPriceProps) {
             {props.allTimeHigh.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
           </p>
         </div>

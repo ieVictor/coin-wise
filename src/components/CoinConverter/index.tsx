@@ -21,7 +21,7 @@ function CoinConverter(props: CoinConverterProps) {
 
   return (
     <div className={styles.coinConverter}>
-      <h2>BTC Converter</h2>
+      <h2>{props.coinCode} Converter</h2>
       <div className={styles.converterInputWrapper}>
         <div className={styles.converterInputBackgroundWrapper}>
           <input
@@ -40,6 +40,8 @@ function CoinConverter(props: CoinConverterProps) {
             value={totalUsdPrice.toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
+              minimumFractionDigits: 4,
+              maximumFractionDigits: 6,
             })}
             readOnly
           />
