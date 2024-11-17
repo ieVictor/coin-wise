@@ -14,7 +14,7 @@ function SearchField() {
     setSearch(value);
     if (/\d/.test(value)) {
       setError(true);
-      setHelperText("Utilize apenas textos.");
+      setHelperText("Only text allowed.");
     } else {
       setError(false);
       setHelperText("");
@@ -23,7 +23,7 @@ function SearchField() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!error && search.trim() !== "") {
-      navigate(`/search/${search}`);
+      navigate(`/search?query=${encodeURIComponent(search.trim())}`);
     }
   };
   return (

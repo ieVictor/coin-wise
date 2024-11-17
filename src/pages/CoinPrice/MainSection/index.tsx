@@ -1,4 +1,4 @@
-import { Breadcrumbs, Link } from "@mui/material";
+import { Breadcrumbs, Container, Link } from "@mui/material";
 import styles from "./styles.module.css";
 import { CaretRight } from "@phosphor-icons/react";
 import Coin from "@Components/Coin";
@@ -16,7 +16,7 @@ export default function MainSection() {
   console.log(data);
   return (
     data && (
-      <div className="container">
+      <Container>
         <main className={styles.mainWrapper}>
           <div className={styles.breadcrumb}>
             <Breadcrumbs
@@ -92,7 +92,7 @@ export default function MainSection() {
             </div>
           </div>
         </main>
-      </div>
+      </Container>
     )
   );
 }
