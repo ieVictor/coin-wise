@@ -1,6 +1,7 @@
-import { Button } from "@mui/material";
-import styles from "./styles.module.css";
-import { CaretRight } from "@phosphor-icons/react";
+import { Button } from '@mui/material';
+import styles from './styles.module.css';
+import coinImage from '../../../assets/Crypto.png';
+import { CaretRight } from '@phosphor-icons/react';
 export default function HeroSection() {
   return (
     <section>
@@ -22,7 +23,7 @@ export default function HeroSection() {
           </a>
         </div>
         <figure>
-          <img src="/src\assets\Crypto.png" alt="Crypto" />
+          <img src={coinImage} alt="Crypto" />
         </figure>
       </main>
     </section>
