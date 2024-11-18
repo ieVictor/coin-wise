@@ -3,6 +3,8 @@ import Navbar from "@Components/Navbar";
 import { Box, Button, Container, Stack } from "@mui/material";
 import { CaretRight } from "@phosphor-icons/react";
 import { useNavigate } from "react-router-dom";
+import error404Img from "../../assets/404error.png";
+
 function Error404Page() {
   const navigate = useNavigate();
   return (
@@ -17,7 +19,7 @@ function Error404Page() {
           gap={2}
         >
           <Box>
-            <img src={"/src/assets/404error.png"} />
+            <img src={error404Img} />
           </Box>
           <Box
             display="flex"
