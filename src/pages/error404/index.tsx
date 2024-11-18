@@ -17,7 +17,7 @@ function Error404Page() {
           gap={2}
         >
           <Box>
-            <img src="/src/assets/404error.png" />
+            <img src={"/src/assets/404error.png"} />
           </Box>
           <Box
             display="flex"
