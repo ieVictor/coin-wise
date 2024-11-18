@@ -1,0 +1,78 @@
+/* CSS RESET */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* COLORS */
+:root {
+  --color-primary: #1459f1;
+  --color-secondary: #cbd2d0;
+  --color-light: #fffdfd;
+  --color-dark: #343a40;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-success: #28a745;
+  --color-warning: #f0e100;
+  --color-danger: #dc3545;
+  --font-primary: "Oswald", sans-serif;
+  --font-secondary: "Source Sans 3", sans-serif;
+}
+/* styles.module.css */
+nav ul li .active {
+  color: var(--color-primary);
+  font-weight: bold;
+}
+/* FONT */
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 6rem;
+  line-height: 6.625rem;
+}
+
+h2 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 3.75rem;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald", sans-serif;
+  font-weight: 700;
+}
+
+p,
+span {
+  font-family: "Source Sans 3", sans-serif;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 20px;
+}

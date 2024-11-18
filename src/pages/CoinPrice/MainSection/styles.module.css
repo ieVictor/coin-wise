@@ -1,0 +1,28 @@
+.mainWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 4rem;
+  width: 100%;
+  gap: 2rem;
+  min-height: 100dvh;
+
+  .breadcrumb {
+    width: 100%;
+  }
+  .mainContentInfos {
+    width: 100%;
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+  .coinConverterWrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    gap: 2rem;
+  }
+}
