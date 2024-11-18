@@ -9,16 +9,20 @@ const router = createBrowserRouter([
     path: '/',
     element: <Home />,
     errorElement: <Error404Page />,
-    children: [
-      {
-        path: 'coin/:id',
-        element: <CoinPrice />,
-      },
-      {
-        path: 'search',
-        element: <SearchPage />,
-      },
-    ],
+  },
+  {
+    path: '/coin/:id',
+    element: <CoinPrice />,
+    errorElement: <Error404Page />,
+  },
+  {
+    path: '/search',
+    element: <SearchPage />,
+    errorElement: <Error404Page />,
+  },
+  {
+    path: '*',
+    element: <Error404Page />,
   },
 ]);
 
