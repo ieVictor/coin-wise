@@ -1,5 +1,5 @@
-import { FavoritesProvider } from "@Contexts/FavoritesProvider";
-import Router from "./routes";
+import { FavoritesProvider } from '@Contexts/FavoritesProvider';
+import Router from './routes';
 
 function App() {
   return (
