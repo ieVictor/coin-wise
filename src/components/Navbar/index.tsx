@@ -1,7 +1,8 @@
-import Logo from "@Components/Logo";
-import styles from "./styles.module.css";
-import { NavLink } from "react-router-dom";
-import SearchField from "@Components/SearchField";
+import Logo from '@Components/Logo';
+import styles from './styles.module.css';
+import { NavLink } from 'react-router-dom';
+import SearchField from '@Components/SearchField';
+import Favorites from '@Components/Favorites';
 
 export default function Navbar() {
   return (
@@ -19,6 +20,9 @@ export default function Navbar() {
           </li>
           <li>
             <SearchField />
+          </li>
+          <li>
+            <Favorites />
           </li>
         </ul>
       </nav>

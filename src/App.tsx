@@ -1,9 +1,12 @@
+import { FavoritesProvider } from "@Contexts/FavoritesProvider";
 import Router from "./routes";
 
 function App() {
   return (
     <>
-      <Router />
+      <FavoritesProvider>
+        <Router />
+      </FavoritesProvider>
     </>
   );
 }
