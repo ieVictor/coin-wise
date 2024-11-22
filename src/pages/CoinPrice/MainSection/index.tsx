@@ -1,19 +1,19 @@
-import { Breadcrumbs, Container, Link } from "@mui/material";
-import styles from "./styles.module.css";
-import { CaretRight } from "@phosphor-icons/react";
-import Coin from "@Components/Coin";
-import MarketInfo from "@Components/MarketInfo";
-import Info from "@Components/Info";
-import CoinConverter from "@Components/CoinConverter";
-import CoinHistoricalPrice from "@Components/CoinHistoricalPrice";
-import { useCryptoById } from "@Services/useCrypto";
-import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { Breadcrumbs, Container, Link } from '@mui/material';
+import styles from './styles.module.css';
+import { CaretRight } from '@phosphor-icons/react';
+import Coin from '@Components/Coin';
+import MarketInfo from '@Components/MarketInfo';
+import Info from '@Components/Info';
+import CoinConverter from '@Components/CoinConverter';
+import CoinHistoricalPrice from '@Components/CoinHistoricalPrice';
+import { useCryptoById } from '@Services/useCrypto';
+import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 export default function MainSection() {
   const { id } = useParams();
-  const { data } = useCryptoById(id ?? "");
+  const { data } = useCryptoById(id ?? '');
   const navigate = useNavigate();
-  console.log(data);
+
   return (
     data && (
       <Container>
@@ -26,7 +26,7 @@ export default function MainSection() {
               <Link
                 underline="hover"
                 color="inherit"
-                onClick={() => navigate("/")}
+                onClick={() => navigate('/')}
               >
                 <strong>Cryptocurrencies</strong>
               </Link>
@@ -57,23 +57,23 @@ export default function MainSection() {
             <Info
               Website={[...data.links.homepage, data.links.whitepaper]}
               Explorers={[
-                "Arkham",
-                "Blockchair",
-                "Btc",
-                "TokenView",
-                "Oklink",
-                "3xpl",
+                'Arkham',
+                'Blockchair',
+                'Btc',
+                'TokenView',
+                'Oklink',
+                '3xpl',
               ]}
-              Wallets={["Trezor", "Electrum", "Xdefi", "SafePal"]}
+              Wallets={['Trezor', 'Electrum', 'Xdefi', 'SafePal']}
               Community={[
-                "Twitter",
-                "Facebook",
+                'Twitter',
+                'Facebook',
                 ...data.links.official_forum_url,
               ]}
-              SearchOn={["Twitter"]}
-              SourceCode={["Github"]}
+              SearchOn={['Twitter']}
+              SourceCode={['Github']}
               ApiId={data.id}
-              Chains={["Ecosystem"]}
+              Chains={['Ecosystem']}
               Categories={data.categories}
             />
             <div className={styles.coinConverterWrapper}>
