@@ -7,7 +7,10 @@ interface FetchState<T> {
   isError: boolean;
 }
 
-export function useFetch<T>(url: string): FetchState<T> {
+export function useFetch<T>(
+  url: string | null | undefined,
+  refetchTrigger: number = 0
+): FetchState<T> {
   const [state, setState] = useState<FetchState<T>>({
     data: null,
     isLoading: false,
@@ -15,6 +18,14 @@ export function useFetch<T>(url: string): FetchState<T> {
   });
 
   useEffect(() => {
+    if (!url) {
+      setState({
+        data: null,
+        isLoading: false,
+        isError: false,
+      });
+      return;
+    }
     let isMounted = true;
 
     const fetchData = async () => {
@@ -46,7 +57,7 @@ export function useFetch<T>(url: string): FetchState<T> {
     return () => {
       isMounted = false;
     };
-  }, [url]);
+  }, [url, refetchTrigger]);
 
   return state;
 }
