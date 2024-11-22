@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Cryptocurrency } from '@Types/Cryptocurrency';
-import FavoritesContext from './favoritesContext';
+import FavoritesContext from './FavoritesContext';
 
 type FavoritesProviderProps = {
   children: React.ReactNode;
