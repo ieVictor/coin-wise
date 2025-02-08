@@ -4,17 +4,26 @@ import { Button, TextField } from '@mui/material';
 import useAuth from '@Services/useAuth';
 import { useState } from 'react';
 import { LoginResponse } from '@Types/User';
-import { Warning } from '@phosphor-icons/react';
+import { Warning, WarningCircle } from '@phosphor-icons/react';
 
 export default function Login() {
   const { login } = useAuth();
   const [email, setEmail] = useState<string>('');
   const [pwd, setPwd] = useState<string>('');
-  const [error, setError] = useState<LoginResponse | null>(null);
+  const [error, setError] = useState<{
+    message: string;
+    code: LoginResponse['code'];
+    errors: LoginResponse['errors'];
+  } | null>(null);
 
-  const handleSubmit = () => {
-    const response = login(email, pwd);
-    if (response.status === 'error') setError(response);
+  const handleSubmit = async () => {
+    const response = await login(email, pwd);
+    if (!response.success)
+      setError({
+        message: response.message,
+        errors: response.errors,
+        code: response.code,
+      });
   };
 
   return (
@@ -40,7 +49,17 @@ export default function Login() {
                 setError(null);
               }}
               style={{ width: '100%' }}
-              error={error?.field === 'email'}
+              error={Boolean(error?.errors?.email)}
+              helperText={
+                error?.errors?.email && error.code === 'VALIDATION_ERROR' ? (
+                  <p style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <WarningCircle size={12} />
+                    {error?.errors.email}
+                  </p>
+                ) : (
+                  ''
+                )
+              }
               type="email"
               label="Email"
               name="email"
@@ -52,8 +71,18 @@ export default function Login() {
                 setPwd(e.target.value);
                 setError(null);
               }}
+              helperText={
+                error?.errors?.password && error.code === 'VALIDATION_ERROR' ? (
+                  <p style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                    <WarningCircle size={12} />
+                    {error?.errors.password}
+                  </p>
+                ) : (
+                  ''
+                )
+              }
               style={{ width: '100%' }}
-              error={error?.field === 'password'}
+              error={Boolean(error?.errors?.password)}
               type="password"
               label="Password"
               name="password"
@@ -62,7 +91,7 @@ export default function Login() {
             {error && (
               <span>
                 <Warning size={16} />
-                {error.msg}
+                {error.message}
               </span>
             )}
           </div>
