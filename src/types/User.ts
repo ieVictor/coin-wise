@@ -1,11 +1,24 @@
 export type User = {
-  email: string | null;
+  id: string;
+  email: string;
   name: string | null;
-  token: string | null;
+  createdAt: Date;
 };
 
+export type LoginResponse_CODES =
+  | 'INVALID_CREDENTIALS'
+  | 'VALIDATION_ERROR'
+  | 'SUCCESS'
+  | 'UNKNOWN_ERROR';
+
 export type LoginResponse = {
-  status: 'success' | 'error';
-  msg: string;
-  field: 'email' | 'password' | null;
+  success: boolean;
+  message: string;
+  accessToken?: string;
+  code?: LoginResponse_CODES;
+  user?: User;
+  errors?: {
+    email: string | null;
+    password: string | null;
+  };
 };
