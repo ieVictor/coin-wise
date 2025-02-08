@@ -21,12 +21,12 @@ export default function ListSection() {
       {/* Coins list */}
       {data && (
         <>
-          <CryptoTable data={data} />
+          <CryptoTable data={data.coins} />
           <TablePagination
             rows={rows}
             onRowsChange={setRows}
             onPageChange={setPage}
-            itens={15226}
+            itens={data.pagination.total}
           />
         </>
       )}

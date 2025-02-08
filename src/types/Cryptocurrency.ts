@@ -1,3 +1,12 @@
+export type CoinsPagination = {
+  coins: Array<Cryptocurrency>;
+  pagination: {
+    total: number;
+    pages: number;
+    current: number;
+  };
+};
+
 export type Cryptocurrency = {
   id: string;
   symbol: string;
