@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { headers } from 'src/config/API';
+import useAuth from './useAuth';
 
 interface FetchState<T> {
   data: T | null;
@@ -16,6 +17,7 @@ export function useFetch<T>(
     isLoading: false,
     isError: false,
   });
+  const { accessToken } = useAuth();
 
   useEffect(() => {
     if (!url) {
@@ -34,7 +36,7 @@ export function useFetch<T>(
       try {
         const response = await fetch(url, {
           method: 'GET',
-          headers: { ...headers },
+          headers: { ...headers, Authorization: `Bearer ${accessToken}` },
         });
 
         if (!response.ok) throw new Error(response.statusText);
@@ -57,7 +59,7 @@ export function useFetch<T>(
     return () => {
       isMounted = false;
     };
-  }, [url, refetchTrigger]);
+  }, [url, refetchTrigger, accessToken]);
 
   return state;
 }
