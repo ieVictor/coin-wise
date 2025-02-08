@@ -1,4 +1,4 @@
-import { Cryptocurrency } from '@Types/Cryptocurrency';
+import { CoinsPagination, Cryptocurrency } from '@Types/Cryptocurrency';
 import { useFetch } from './useFetch';
 import { apiUrl } from 'src/config/API';
 import { CryptocurrencyById } from '@Types/CryptocurrencyById';
@@ -10,7 +10,7 @@ export function useCryptoList(
   vs_currency?: string,
   page?: number
 ) {
-  return useFetch<Cryptocurrency[]>(
+  return useFetch<CoinsPagination>(
     `${apiUrl.COINS_LIST}?vs_currency=${
       vs_currency || 'USD'
     }&per_page=${per_page}&page=${page}`
