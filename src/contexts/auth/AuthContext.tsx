@@ -3,9 +3,11 @@ import { createContext } from 'react';
 import { LoginResponse, User } from '@Types/User';
 
 export type AuthContextProps = {
-  user: User;
-  setUser: React.Dispatch<React.SetStateAction<User>>;
-  login: (email: string, password: string) => LoginResponse;
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  accessToken: string | null;
+  login: (email: string, password: string) => Promise<LoginResponse>;
+  isLoading: boolean;
 };
 
 export const AuthContext = createContext<AuthContextProps | null>(null);

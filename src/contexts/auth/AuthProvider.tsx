@@ -1,38 +1,76 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { LoginResponse, User } from '@Types/User';
 import { AuthContext } from './AuthContext';
-import { isEmailValid } from './validator';
+import { apiUrl, headers } from 'src/config/API';
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [user, setUser] = useState<User>({
-    email: null,
-    name: null,
-    token: null,
+  const [loading, setLoading] = useState<boolean>(true);
+  const [token, setToken] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>({
+    id: '',
+    email: '',
+    name: '',
+    createdAt: new Date(),
   });
 
-  const login = (email: string, password: string): LoginResponse => {
-    if (!isEmailValid(email))
-      return { status: 'error', msg: 'Email inválido!', field: 'email' };
-    if (!password)
-      return {
-        status: 'error',
-        msg: 'Por favor adicione uma senha!',
-        field: 'password',
-      };
-
+  const login = async (
+    email: string,
+    password: string
+  ): Promise<LoginResponse> => {
     try {
-      return {
-        status: 'success',
-        msg: 'Login realizado com sucesso!',
-        field: null,
-      };
+      const rawResponse = await fetch(apiUrl.LOGIN, {
+        method: 'POST',
+        credentials: 'include',
+        headers: { ...headers },
+        body: JSON.stringify({ email: email, password: password }),
+      });
+      const data: LoginResponse = await rawResponse.json();
+      if (data.success && data.user && data.accessToken) {
+        setToken(data.accessToken);
+        setUser(data.user);
+      }
+      return data;
     } catch (error) {
-      return { status: 'error', msg: 'Error: ' + error, field: null };
+      return {
+        success: false,
+        message: 'Error: ' + error,
+        code: 'UNKNOWN_ERROR',
+        errors: { email: null, password: null },
+      };
     }
   };
 
+  const refreshToken = async () => {
+    try {
+      setLoading(true)
+      const response = await fetch(`${apiUrl.REFRESH_TOKEN}`, {
+        method: 'POST',
+        credentials: 'include',
+        headers,
+      });
+
+      const data = await response.json();
+      if (data.sucess) {
+        setToken(data.accessToken);
+        setLoading(false);
+      } else {
+        setUser(null);
+        setLoading(false);
+      }
+    } catch (error) {
+      setLoading(false);
+      console.error('Token expired & could not be refreshed!', error);
+    }
+  };
+
+  useEffect(() => {
+    refreshToken();
+  }, []);
+
   return (
-    <AuthContext.Provider value={{ user, setUser, login }}>
+    <AuthContext.Provider
+      value={{ user, accessToken: token, setUser, login, isLoading: loading }}
+    >
       {children}
     </AuthContext.Provider>
   );
