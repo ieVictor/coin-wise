@@ -5,8 +5,10 @@ import useAuth from '@Services/useAuth';
 import { useState } from 'react';
 import { LoginResponse } from '@Types/User';
 import { Warning, WarningCircle } from '@phosphor-icons/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
+  const navigate = useNavigate();
   const { login } = useAuth();
   const [email, setEmail] = useState<string>('');
   const [pwd, setPwd] = useState<string>('');
@@ -24,6 +26,7 @@ export default function Login() {
         errors: response.errors,
         code: response.code,
       });
+    else navigate('/');
   };
 
   return (

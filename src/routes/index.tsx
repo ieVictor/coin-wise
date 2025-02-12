@@ -1,29 +1,43 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "@Pages/Home";
-import CoinPrice from "@Pages/CoinPrice";
-import SearchPage from "@Pages/SearchPage";
-import Error404Page from "@Pages/error404";
+import { createBrowserRouter } from 'react-router-dom';
+import Home from '@Pages/Home';
+import CoinPrice from '@Pages/CoinPrice';
+import SearchPage from '@Pages/SearchPage';
+import Error404Page from '@Pages/error404';
+import Login from '@Pages/Login';
+import App from 'src/App';
 
 const router = createBrowserRouter(
   [
     {
-      path: "/",
-      element: <Home />,
+      path: '/',
+      element: <App />,
       errorElement: <Error404Page />,
+      children: [
+        {
+          path: '/',
+          element: <Home />,
+          errorElement: <Error404Page />,
+        },
+        {
+          path: '/coins/:id',
+          element: <CoinPrice />,
+          errorElement: <Error404Page />,
+        },
+        {
+          path: '/search',
+          element: <SearchPage />,
+          errorElement: <Error404Page />,
+        },
+        {
+          path: '*',
+          element: <Error404Page />,
+        },
+      ],
     },
     {
-      path: "/coins/:id",
-      element: <CoinPrice />,
+      path: '/login',
+      element: <Login />,
       errorElement: <Error404Page />,
-    },
-    {
-      path: "/search",
-      element: <SearchPage />,
-      errorElement: <Error404Page />,
-    },
-    {
-      path: "*",
-      element: <Error404Page />,
     },
   ],
   {
@@ -37,8 +51,4 @@ const router = createBrowserRouter(
   }
 );
 
-function Router() {
-  return <RouterProvider router={router} />;
-}
-
-export default Router;
+export default router;

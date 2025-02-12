@@ -18,7 +18,7 @@ export default function TableItem(props: Cryptocurrency) {
   };
 
   return (
-    <tr onClick={() => navigate(`/coin/${props.id}`)}>
+    <tr onClick={() => navigate(`/coins/${props.id}`)}>
       <td
         width={ROW_SIZE.X_SMALL}
         style={{ justifyContent: 'center' }}
