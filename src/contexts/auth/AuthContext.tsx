@@ -7,6 +7,7 @@ export type AuthContextProps = {
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
   accessToken: string | null;
   login: (email: string, password: string) => Promise<LoginResponse>;
+  logout: () => Promise<unknown>;
   isLoading: boolean;
 };
 
