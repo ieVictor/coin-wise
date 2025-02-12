@@ -38,8 +38,8 @@ export default function TablePagination(props: TablePaginationProps) {
           }
           size="small"
         >
+          <MenuItem value={5}>5</MenuItem>
           <MenuItem value={25}>25</MenuItem>
-          <MenuItem value={50}>50</MenuItem>
           <MenuItem value={100}>100</MenuItem>
         </Select>
       </FormControl>

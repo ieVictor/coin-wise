@@ -1,4 +1,4 @@
-import { Breadcrumbs, Container, Link } from '@mui/material';
+import { Breadcrumbs, CircularProgress, Container, Link } from '@mui/material';
 import styles from './styles.module.css';
 import { CaretRight } from '@phosphor-icons/react';
 import Coin from '@Components/Coin';
@@ -9,10 +9,19 @@ import CoinHistoricalPrice from '@Components/CoinHistoricalPrice';
 import { useCryptoById } from '@Services/useCrypto';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Logo from '@Components/Logo';
 export default function MainSection() {
   const { id } = useParams();
-  const { data } = useCryptoById(id ?? '');
+  const { data, isLoading } = useCryptoById(id ?? '');
   const navigate = useNavigate();
+
+  if (isLoading)
+    return (
+      <div className={styles.loadingWrapper}>
+        <CircularProgress />
+        <Logo size="normal" />
+      </div>
+    );
 
   return (
     data && (
@@ -37,25 +46,23 @@ export default function MainSection() {
           </div>
           <Coin
             name={data.name}
-            percentage={data.market_data.market_cap_change_percentage_24h}
-            img={data.image.large}
-            price={data.market_data.current_price.usd}
+            percentage={data.market_cap_change_percentage_24h}
+            img={data.image}
+            price={data.current_price}
             rank={data.market_cap_rank}
             symbol={data.symbol.toLocaleUpperCase()}
           />
           <div className={styles.mainContentInfos}>
             <MarketInfo
-              marketCap={data.market_data.market_cap.usd}
-              fullyDilutedValuation={
-                data.market_data.fully_diluted_valuation.usd
-              }
+              marketCap={data.market_cap}
+              fullyDilutedValuation={data.fully_diluted_valuation}
               tradingVolume={54231301407}
-              circulatingSupply={data.market_data.circulating_supply}
-              totalSupply={data.market_data.total_supply}
-              maxSupply={data.market_data.max_supply}
+              circulatingSupply={data.circulating_supply}
+              totalSupply={data.total_supply}
+              maxSupply={data.max_supply}
             />
             <Info
-              Website={[...data.links.homepage, data.links.whitepaper]}
+              Website={['www.homepage.com', 'www.whitepaper.com']}
               Explorers={[
                 'Arkham',
                 'Blockchair',
@@ -65,29 +72,25 @@ export default function MainSection() {
                 '3xpl',
               ]}
               Wallets={['Trezor', 'Electrum', 'Xdefi', 'SafePal']}
-              Community={[
-                'Twitter',
-                'Facebook',
-                ...data.links.official_forum_url,
-              ]}
+              Community={['Twitter', 'Facebook']}
               SearchOn={['Twitter']}
               SourceCode={['Github']}
               ApiId={data.id}
               Chains={['Ecosystem']}
-              Categories={data.categories}
+              Categories={['CryptoCoin']}
             />
             <div className={styles.coinConverterWrapper}>
               <CoinConverter
-                usdPrice={data.market_data.current_price.usd}
+                usdPrice={data.current_price}
                 coinCode={data.symbol.toUpperCase()}
               />
               <hr />
               <CoinHistoricalPrice
                 coinCode={data.symbol.toUpperCase()}
-                allTimeHigh={data.market_data.ath.usd}
-                allTimeLow={data.market_data.atl.usd}
-                high24h={data.market_data.high_24h.usd}
-                low24h={data.market_data.low_24h.usd}
+                allTimeHigh={data.ath}
+                allTimeLow={data.atl}
+                high24h={data.high_24h}
+                low24h={data.low_24h}
               />
             </div>
           </div>

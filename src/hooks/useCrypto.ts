@@ -35,5 +35,5 @@ export function useCryptoListBySearch(search?: string) {
 }
 
 export function useCryptoById(id: string) {
-  return useFetch<CryptocurrencyById>(`${apiUrl.COIN_BY_ID}${id}`);
+  return useFetch<CryptocurrencyById>(`${apiUrl.COIN_BY_ID}/${id}`);
 }
