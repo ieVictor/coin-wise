@@ -5,6 +5,7 @@ import SearchPage from '@Pages/SearchPage';
 import Error404Page from '@Pages/error404';
 import Login from '@Pages/Login';
 import App from 'src/App';
+import CoinAdd from '@Pages/CoinAdd';
 
 const router = createBrowserRouter(
   [
@@ -16,6 +17,11 @@ const router = createBrowserRouter(
         {
           path: '/',
           element: <Home />,
+          errorElement: <Error404Page />,
+        },
+        {
+          path: '/addCoin',
+          element: <CoinAdd />,
           errorElement: <Error404Page />,
         },
         {

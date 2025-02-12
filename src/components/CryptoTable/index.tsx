@@ -4,8 +4,12 @@ import TableHeader from '../../athoms/TableHeader';
 import { Cryptocurrency } from '@Types/Cryptocurrency';
 import styles from './styles.module.css';
 import { CryptoTableProps, SortDirection } from './types';
+import { Button } from '@mui/material';
+import { Plus } from '@phosphor-icons/react';
+import { useNavigate } from 'react-router-dom';
 
 export default function CryptoTable({ data }: CryptoTableProps) {
+  const navigate = useNavigate();
   const [sortConfig, setSortConfig] = useState<{
     field: keyof Cryptocurrency | null;
     direction: SortDirection;
@@ -43,7 +47,16 @@ export default function CryptoTable({ data }: CryptoTableProps) {
   };
 
   return (
-    <>
+    <div className={styles.contentWrapper}>
+      <Button
+        onClick={() => navigate('/addCoin')}
+        startIcon={<Plus />}
+        variant="contained"
+        color="primary"
+        style={{ alignSelf: 'end' }}
+      >
+        Add Coin
+      </Button>
       <table className={styles.tableWrapper}>
         <thead>
           <TableHeader onSort={handleSort} />
@@ -54,6 +67,6 @@ export default function CryptoTable({ data }: CryptoTableProps) {
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 }

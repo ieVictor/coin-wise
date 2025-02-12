@@ -20,6 +20,7 @@ function SearchPage() {
   const query = useQuery();
   const searchTerm = query.get('query') || '';
   const { data, isLoading, isError } = useCryptoListBySearch(searchTerm);
+  console.log(data);
   return (
     <>
       <section className={styles.sectionWrapper} id="tableCoins">
@@ -31,10 +32,10 @@ function SearchPage() {
           </section>
         )}
         {data ? (
-          data.coins.length > 0 ? (
+          data.length > 0 ? (
             <>
-              <List>
-                {data.coins.map((coin) => (
+              <List style={{ height: '100dvh' }}>
+                {data.map((coin) => (
                   <ListItem
                     key={coin.id}
                     component={Link}

@@ -1,0 +1,29 @@
+.mainWrapper {
+  min-height: 100dvh;
+  padding-bottom: 2rem;
+  > h1 {
+    width: max-content;
+    font-size: 2rem;
+    justify-self: center;
+  }
+}
+
+.sectionWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  > h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .doubleInputLine {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+
+  width: 100%;
+}

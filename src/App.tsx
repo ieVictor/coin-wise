@@ -1,5 +1,4 @@
 import Navbar from '@Components/Navbar';
-import { FavoritesProvider } from '@Contexts/FavoritesProvider';
 import useAuth from '@Services/useAuth';
 import { CircularProgress } from '@mui/material';
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -29,10 +28,10 @@ function App() {
   return (
     accessToken &&
     user && (
-      <FavoritesProvider>
+      <>
         <Navbar />
         <Outlet />
-      </FavoritesProvider>
+      </>
     )
   );
 }

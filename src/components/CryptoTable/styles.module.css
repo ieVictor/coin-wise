@@ -1,3 +1,10 @@
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: max-content;
+}
+
 .tableWrapper {
   tr {
     font-family: 'Source Sans 3', sans-serif;
