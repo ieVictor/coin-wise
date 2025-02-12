@@ -3,6 +3,7 @@ import styles from './styles.module.css';
 import { NavLink } from 'react-router-dom';
 import SearchField from '@Components/SearchField';
 import Favorites from '@Components/Favorites';
+import SignOutButton from '@athoms/SignOut';
 
 export default function Navbar() {
   return (
@@ -23,6 +24,9 @@ export default function Navbar() {
           </li>
           <li>
             <Favorites />
+          </li>
+          <li>
+            <SignOutButton />
           </li>
         </ul>
       </nav>

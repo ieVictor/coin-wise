@@ -2,6 +2,7 @@ export const API_BASE_URL = import.meta.env.VITE_API_URL;
 
 export const apiUrl = {
   LOGIN: `${API_BASE_URL}/login`,
+  LOGOUT: `${API_BASE_URL}/logout`,
   REFRESH_TOKEN: `${API_BASE_URL}/auth/refresh`,
   AUTH_CHECK: `${API_BASE_URL}/auth/check`,
   COIN_BY_ID: 'https://api.coingecko.com/api/v3/coins',

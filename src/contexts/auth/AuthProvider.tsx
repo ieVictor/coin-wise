@@ -42,7 +42,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const refreshToken = async () => {
     try {
-      setLoading(true)
+      setLoading(true);
       const response = await fetch(`${apiUrl.REFRESH_TOKEN}`, {
         method: 'POST',
         credentials: 'include',
@@ -50,10 +50,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       });
 
       const data = await response.json();
-      if (data.sucess) {
+      if (data.success) {
         setToken(data.accessToken);
+        setUser(data.user);
         setLoading(false);
       } else {
+        setToken(null);
         setUser(null);
         setLoading(false);
       }
@@ -63,13 +65,37 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const logout = async () => {
+    try {
+      const rawResponse = await fetch(apiUrl.LOGOUT, {
+        method: 'POST',
+        credentials: 'include',
+        headers: { ...headers },
+        body: JSON.stringify({ user: user }),
+      });
+      if (rawResponse.status) {
+        setUser(null);
+        setToken(null);
+      }
+    } catch (error) {
+      return { error };
+    }
+  };
+
   useEffect(() => {
     refreshToken();
   }, []);
 
   return (
     <AuthContext.Provider
-      value={{ user, accessToken: token, setUser, login, isLoading: loading }}
+      value={{
+        user,
+        logout,
+        accessToken: token,
+        setUser,
+        login,
+        isLoading: loading,
+      }}
     >
       {children}
     </AuthContext.Provider>
