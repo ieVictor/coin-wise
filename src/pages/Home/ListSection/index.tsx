@@ -9,9 +9,9 @@ import eos from '../../../assets/EOS_3D.png';
 import { Rows } from '@Components/CryptoTable/types';
 
 export default function ListSection() {
-  const [rows, setRows] = useState<Rows>(25);
+  const [rows, setRows] = useState<Rows>(5);
   const [page, setPage] = useState<number>(1);
-  const { data } = useCryptoList(rows, 'usd', page);
+  const { data } = useCryptoList(rows, page);
 
   return (
     <section className={styles.sectionWrapper} id="tableCoins">
@@ -19,14 +19,15 @@ export default function ListSection() {
       <h1>Trade, Exchange, Stake and More with All popular Coins</h1>
 
       {/* Coins list */}
-      {data && (
+      {data?.coins && (
         <>
-          <CryptoTable data={data} />
+          <CryptoTable data={data.coins} />
           <TablePagination
+            page={page}
             rows={rows}
             onRowsChange={setRows}
             onPageChange={setPage}
-            itens={15226}
+            itens={data.pagination.total}
           />
         </>
       )}

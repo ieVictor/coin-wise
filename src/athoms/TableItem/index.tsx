@@ -2,32 +2,14 @@ import { Star, CaretUp, CaretDown } from '@phosphor-icons/react';
 import ROW_SIZE from '../../components/CryptoTable/constants';
 import { Cryptocurrency } from '@Types/Cryptocurrency';
 import { useNavigate } from 'react-router-dom';
-import useFavorites from '@Services/useFavorites';
 
 export default function TableItem(props: Cryptocurrency) {
-  const { cryptos, setCryptos } = useFavorites();
   const navigate = useNavigate();
 
-  const handleFavorite = (e: React.MouseEvent, id: Cryptocurrency['id']) => {
-    e.stopPropagation();
-    setCryptos(
-      cryptos.includes(id)
-        ? cryptos.filter((cryptoId) => cryptoId !== id)
-        : [...cryptos, id]
-    );
-  };
-
   return (
-    <tr onClick={() => navigate(`/coin/${props.id}`)}>
-      <td
-        width={ROW_SIZE.X_SMALL}
-        style={{ justifyContent: 'center' }}
-        onClick={(e) => handleFavorite(e, props.id)}
-      >
-        <Star
-          size={16}
-          weight={cryptos.includes(props.id) ? 'fill' : 'regular'}
-        />
+    <tr onClick={() => navigate(`/coins/${props.id}`)}>
+      <td width={ROW_SIZE.X_SMALL} style={{ justifyContent: 'center' }}>
+        <Star size={16} weight={'regular'} />
       </td>
       <td width={ROW_SIZE.SMALL}>{props.market_cap_rank || '-'}</td>
       <td

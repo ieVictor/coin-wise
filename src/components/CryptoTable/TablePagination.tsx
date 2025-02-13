@@ -12,8 +12,12 @@ export default function TablePagination(props: TablePaginationProps) {
   return (
     <div className={styles.paginationWrapper}>
       <p>
-        Showing <strong>1 to {props.rows}</strong> of{' '}
-        <strong>{props.itens}</strong> results
+        Showing{' '}
+        <strong>
+          {(props.page - 1) * props.rows + 1} to{' '}
+          {Math.min(props.page * props.rows, props.itens || 1)}
+        </strong>{' '}
+        of <strong>{props.itens}</strong> results
       </p>
       <Pagination
         onChange={(_event, page) => props.onPageChange(page)}
@@ -38,8 +42,8 @@ export default function TablePagination(props: TablePaginationProps) {
           }
           size="small"
         >
+          <MenuItem value={5}>5</MenuItem>
           <MenuItem value={25}>25</MenuItem>
-          <MenuItem value={50}>50</MenuItem>
           <MenuItem value={100}>100</MenuItem>
         </Select>
       </FormControl>

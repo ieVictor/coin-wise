@@ -1,11 +1,12 @@
 import { Cryptocurrency } from '@Types/Cryptocurrency';
 import React from 'react';
 
-export type Rows = 25 | 50 | 100;
+export type Rows = 5 | 10 | 25 | 50 | 100;
 export type SortDirection = 'asc' | 'desc' | null;
 
 export type TablePaginationProps = {
   rows: number;
+  page: number;
   onPageChange: React.Dispatch<React.SetStateAction<number>>;
   onRowsChange: React.Dispatch<React.SetStateAction<Rows>>;
   itens?: number;

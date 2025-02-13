@@ -1,19 +1,17 @@
-import Footer from "@Components/Footer";
-import Navbar from "@Components/Navbar";
-import { Box, Button, Container, Stack } from "@mui/material";
-import { CaretRight } from "@phosphor-icons/react";
-import { useNavigate } from "react-router-dom";
-import error404Img from "../../assets/404error.png";
+import Footer from '@Components/Footer';
+import { Box, Button, Container, Stack } from '@mui/material';
+import { CaretRight } from '@phosphor-icons/react';
+import { useNavigate } from 'react-router-dom';
+import error404Img from '../../assets/404error.png';
 
 function Error404Page() {
   const navigate = useNavigate();
   return (
     <div>
-      <Navbar />
       <Container>
         <Stack
           direction="row"
-          minHeight={"65dvh"}
+          minHeight={'65dvh'}
           justifyContent="center"
           alignItems="center"
           gap={2}
@@ -32,7 +30,7 @@ function Error404Page() {
             <Button
               variant="contained"
               endIcon={<CaretRight size={16} />}
-              onClick={() => navigate("/")}
+              onClick={() => navigate('/')}
             >
               HOME
             </Button>

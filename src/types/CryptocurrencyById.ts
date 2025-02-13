@@ -3,32 +3,30 @@ export type CryptocurrencyById = {
   symbol: string;
   name: string;
   categories: string[];
-  image: { thumb: string; small: string; large: string };
+  image: string;
   market_cap_rank: number;
   links: Links;
-  market_data: {
-    current_price: { usd: number };
-    market_cap: { usd: number };
-    fully_diluted_valuation: { usd: number | null };
-    total_volume: number;
-    high_24h: { usd: number };
-    low_24h: { usd: number };
-    price_change_24h: number;
-    price_change_percentage_24h: number;
-    market_cap_change_24h: number;
-    market_cap_change_percentage_24h: number;
-    circulating_supply: number;
-    total_supply: number;
-    max_supply: number | null;
-    ath: { usd: number };
-    ath_change_percentage: number;
-    ath_date: string; // ISO date string
-    atl: { usd: number };
-    atl_change_percentage: number;
-    atl_date: string; // ISO date string
-    roi: null; // ROI field is explicitly null in the provided data
-    last_updated: string; // ISO date string
-  };
+  current_price: number;
+  market_cap: number;
+  fully_diluted_valuation: number;
+  total_volume: number;
+  high_24h: number;
+  low_24h: number;
+  price_change_24h: number;
+  price_change_percentage_24h: number;
+  market_cap_change_24h: number;
+  market_cap_change_percentage_24h: number;
+  circulating_supply: number;
+  total_supply: number;
+  max_supply: number | null;
+  ath: number;
+  ath_change_percentage: number;
+  ath_date: string; // ISO date string
+  atl: number;
+  atl_change_percentage: number;
+  atl_date: string; // ISO date string
+  roi: null; // ROI field is explicitly null in the provided data
+  last_updated: string; // ISO date string
 };
 
 type Links = {
