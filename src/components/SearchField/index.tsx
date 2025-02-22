@@ -23,7 +23,7 @@ function SearchField() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!error && search.trim() !== '') {
-      navigate(`/search?query=${encodeURIComponent(search.trim())}`);
+      navigate(`/search?q=${encodeURIComponent(search.trim())}`);
     }
   };
   return (
