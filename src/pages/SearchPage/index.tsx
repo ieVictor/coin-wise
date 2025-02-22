@@ -1,7 +1,7 @@
-import Footer from "@Components/Footer";
-import { useCryptoListBySearch } from "@Services/useCrypto";
-import styles from "./styles.module.css";
-import { Link, useLocation } from "react-router-dom";
+import Footer from '@Components/Footer';
+import { useCryptoListBySearch } from '@Services/useCrypto';
+import styles from './styles.module.css';
+import { Link, useLocation } from 'react-router-dom';
 import {
   Avatar,
   CircularProgress,
@@ -10,7 +10,7 @@ import {
   ListItemAvatar,
   ListItemText,
   Typography,
-} from "@mui/material";
+} from '@mui/material';
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);
@@ -18,9 +18,9 @@ const useQuery = () => {
 
 function SearchPage() {
   const query = useQuery();
-  const searchTerm = query.get("query") || "";
+  const searchTerm = query.get('q') || '';
   const { data, isLoading, isError } = useCryptoListBySearch(searchTerm);
-  console.log(data);
+
   return (
     <>
       <section className={styles.sectionWrapper} id="tableCoins">
@@ -31,16 +31,16 @@ function SearchPage() {
             <CircularProgress />
           </section>
         )}
-        {data ? (
-          data.length > 0 ? (
+        {data?.coins ? (
+          data.coins.length > 0 ? (
             <>
-              <List style={{ height: "100dvh" }}>
-                {data.map((coin) => (
+              <List style={{ height: '100dvh' }}>
+                {data.coins.map((coin) => (
                   <ListItem
                     key={coin.id}
                     component={Link}
                     to={`/coins/${coin.id}`}
-                    style={{ textDecoration: "none" }}
+                    style={{ textDecoration: 'none' }}
                   >
                     <ListItemAvatar>
                       <Avatar alt={coin.name} src={coin.thumb} />
@@ -65,17 +65,17 @@ function SearchPage() {
         <img
           src="/src\assets\ApeCoin_3D.png"
           alt="ApeCoin"
-          style={{ position: "absolute", right: -200, top: 80 }}
+          style={{ position: 'absolute', right: -200, top: 80 }}
         />
         <img
           src="/src\assets\Bitcoin_3D.png"
           alt="ApeCoin"
-          style={{ position: "absolute", left: -120, top: 980 }}
+          style={{ position: 'absolute', left: -120, top: 980 }}
         />
         <img
           src="/src\assets\EOS_3D.png"
           alt="ApeCoin"
-          style={{ width: 280, position: "absolute", right: -150, top: 1880 }}
+          style={{ width: 280, position: 'absolute', right: -150, top: 1880 }}
         />
       </section>
       <Footer />

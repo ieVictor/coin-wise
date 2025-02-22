@@ -32,9 +32,9 @@ export function useCryptoListBySearch(search?: string) {
   const params = new URLSearchParams(location.search);
   const query = params.get('query') || search || '';
 
-  const url = `${apiUrl.COIN_BY_SEARCH}?query=${encodeURIComponent(query)}`;
+  const url = `${apiUrl.COIN_BY_SEARCH}?q=${encodeURIComponent(query)}`;
 
-  const { data, isLoading, isError } = useFetch<CryptocurrencyBySearch>(url);
+  const { data, isLoading, isError } = useFetch<CryptocurrencyBySearch>(url, 0);
 
   return { data, isLoading, isError };
 }

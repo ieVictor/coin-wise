@@ -8,24 +8,11 @@ interface Coin {
   large: string;
 }
 
-// interface Exchange {
-//   id: string;
-//   name: string;
-//   market_type: string;
-//   thumb: string;
-//   large: string;
-// }
-
-// interface Category {
-//   id: number;
-//   name: string;
-// }
-
-// interface NFTCollection {
-//   id: string;
-//   name: string;
-//   symbol: string;
-//   thumb: string;
-// }
-
-export type CryptocurrencyBySearch = Coin[];
+export type CryptocurrencyBySearch = {
+  coins: Array<Coin>;
+  pagination: {
+    total: number;
+    pages: number;
+    current: number;
+  };
+};
